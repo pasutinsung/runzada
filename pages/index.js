@@ -15,7 +15,7 @@ export default function Home() {
         <Layout>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
             {data.products.map((products) => (
-              <ProductItem product={products} key={products.slug}></ProductItem>
+              <ProductItem product={products} key={products.slug} />
             ))}
           </div>
         </Layout>
