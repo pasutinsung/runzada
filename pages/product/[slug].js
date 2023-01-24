@@ -1,20 +1,32 @@
 import Layout from "@/components/Layout";
 import data from "@/utils/data";
+import { Store } from "@/utils/Stores";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useContext } from "react";
 
 export default function ProductScreen() {
+  const { state, dispatch } = useContext(Store);
   const { query } = useRouter();
   const { slug } = query;
   const product = data.products.find((x) => x.slug === slug);
   if (!product) {
     return <div>Product not found</div>;
   }
+  const addToCartHandler = () => {
+    const existItem = state.cart.cartItems.find((x) => x.slug === product.slug);
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+    if (product.countInStock < quantity) {
+      alert("Sorry for inconvenience but we are out of stock ");
+      return;
+    }
+    dispatch({ type: "CART_ADD_ITEM", payload: { ...product, quantity } });
+  };
   return (
     <Layout title={product.name}>
       <div className="py-2">
-        <Link href="/">Back to product</Link>
+        <Link href="/">Back to home page</Link>
       </div>
       <div className="grid md:grid-cols-4 md:gap-3 ">
         <div className="md:col-span-2">
@@ -50,6 +62,7 @@ export default function ProductScreen() {
           <button
             className="rounded bg-red-400  py-2 px-4 shadow outline-none hover:bg-red-300  active:bg-red-500 w-full"
             type="button"
+            onClick={addToCartHandler}
           >
             Add to cart
           </button>
