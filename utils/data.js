@@ -78,10 +78,10 @@ const data = {
       category: "Shoes",
       image: "/images/shoes2.jpg",
       price: 200,
-      brand: "crocs",
+      brand: "nike",
       rating: 4.9,
       numReviews: 12,
-      countInStock: 5,
+      countInStock: 0,
       description: "A popular shoes",
     },
     {
