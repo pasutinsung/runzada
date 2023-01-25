@@ -20,8 +20,13 @@ export default function LoginScreen() {
           <label htmlFor="email">Email</label>
           <input
             type="email"
-            {...register("email", { required: "please enter email" })}
-            lassName="w-full"
+            {...register("email", {
+              required: "Please enter email",
+              pattern: {
+                value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/i,
+                message: "Please enter valid email",
+              },
+            })}
             id="email"
             autoFocus
             className="w-full rounded border p-2 outline-none ring-amber-300 focus:ring"
@@ -34,6 +39,10 @@ export default function LoginScreen() {
           <label htmlFor="Password">Password</label>
           <input
             type="Password"
+            {...register("password", {
+              required: "Please enter password",
+              minLength: { value: 6, message: "password is more than 5 chars" },
+            })}
             autoFocus
             className="w-full rounded border p-2 outline-none ring-amber-300 focus:ring"
             id="Password"
