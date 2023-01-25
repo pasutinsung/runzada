@@ -15,7 +15,7 @@ export default function Layout({ children }) {
               runzada
             </Link>
             <div>
-              <Link href="/Cart" className="p-2">
+              <Link href="/cart" className="p-2">
                 Cart
                 {cart.cartItems.length > 0 && (
                   <span className="ml-1 rounded-full bg-blue-300 px-2 py-1 text-xs font-bold text-white">

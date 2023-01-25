@@ -3,7 +3,7 @@ import data from "@/utils/data";
 import { Store } from "@/utils/Stores";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { router, useRouter } from "next/router";
 import { useContext } from "react";
 
 export default function ProductScreen() {
@@ -22,6 +22,7 @@ export default function ProductScreen() {
       return;
     }
     dispatch({ type: "CART_ADD_ITEM", payload: { ...product, quantity } });
+    router.push("/cart");
   };
   return (
     <Layout title={product.name}>
