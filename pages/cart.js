@@ -59,6 +59,7 @@ function CartScreen() {
                         onChange={(e) =>
                           updateCartHandler(item, e.target.value)
                         }
+                        className="rounded border p-2 outline-none ring-amber-300 focus:ring"
                       >
                         {[...Array(item.countInStock).keys()].map((x) => (
                           <option key={x + 1} value={x + 1}>
@@ -101,7 +102,7 @@ function CartScreen() {
               </li>
               <li>
                 <button
-                  onClick={() => router.push("/shipping")}
+                  onClick={() => router.push("login?redirect=/shipping")}
                   className="rounded bg-green-300  py-2 px-4 shadow outline-none hover:bg-green-200  active:bg-green-400 w-full"
                   type="button"
                 >

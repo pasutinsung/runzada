@@ -1,17 +1,22 @@
 import { Store } from "@/utils/Stores";
 import Link from "next/link";
 import React, { Children, useContext } from "react";
-
+import { useState, useEffect } from "react";
 export default function Layout({ children }) {
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
+  const [cartItemsCount, setCartItemsCount] = useState(0);
+  useEffect(() => {
+    setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
+  }, [cart.cartItems]);
+
   return (
     <>
       <title>runzada</title>
       <div className="flex min-h-screen flex-col justify-between">
         <header>
           <nav className="flex h-12 justify-between px-4 items-center shadow-md">
-            <Link href="/" className="text-lg font-bold">
+            <Link href="/" className="text-lg font-bold text-red-500">
               runzada
             </Link>
             <div>
@@ -23,7 +28,7 @@ export default function Layout({ children }) {
                   </span>
                 )}
               </Link>
-              <Link href="/Login" className="p-2">
+              <Link href="/login" className="p-2">
                 Login
               </Link>
             </div>
