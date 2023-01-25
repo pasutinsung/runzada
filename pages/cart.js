@@ -4,7 +4,9 @@ import React, { useContext } from "react";
 import { XCircleIcon } from "@heroicons/react/outline";
 import { Store } from "@/utils/Stores";
 import Image from "next/image";
+import { router, useRouter } from "next/router";
 export default function CartScreen() {
+  const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const {
     cart: { cartItems },
@@ -70,6 +72,26 @@ export default function CartScreen() {
                 ))}
               </tbody>
             </table>
+          </div>
+          <div className="mb-5 p-5 block rounded-lg border border-gray-100 shadow-md">
+            <ul>
+              <li>
+                <div className="pb-3 text-xl">
+                  Subtotal {cartItems.reduce((a, c) => a + c.quantity, 0)}
+                  {"   "} :{" "}
+                  {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)} $
+                </div>
+              </li>
+              <li>
+                <button
+                  onClick={() => router.push("/shipping")}
+                  className="rounded bg-green-300  py-2 px-4 shadow outline-none hover:bg-green-200  active:bg-green-400 w-full"
+                  type="button"
+                >
+                  Check out
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
       )}

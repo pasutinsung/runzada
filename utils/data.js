@@ -61,8 +61,8 @@ const data = {
       description: "A popular pants",
     },
     {
-      name: "Nike shoes",
-      slug: "nike shoes",
+      name: "Jordan shoes",
+      slug: "pink nike shoes",
       category: "Shoes",
       image: "/images/shoes1.jpg",
       price: 70,
@@ -74,7 +74,7 @@ const data = {
     },
     {
       name: "Nike shoes",
-      slug: "nike shoes",
+      slug: "black nike shoes",
       category: "Shoes",
       image: "/images/shoes2.jpg",
       price: 200,
@@ -86,7 +86,7 @@ const data = {
     },
     {
       name: "Nike shoes",
-      slug: "nike shoes",
+      slug: "blue nike shoes",
       category: "Shoes",
       image: "/images/shoes3.jpg",
       price: 100,
@@ -98,7 +98,7 @@ const data = {
     },
     {
       name: "Nike shoes",
-      slug: "nike shoes",
+      slug: "yellow nike shoes",
       category: "Shoes",
       image: "/images/shoes4.jpg",
       price: 120,
