@@ -47,6 +47,9 @@ export default function LoginScreen() {
             className="w-full rounded border p-2 outline-none ring-amber-300 focus:ring"
             id="Password"
           ></input>
+          {errors.password && (
+            <div className="text-red-500 ">{errors.password.message}</div>
+          )}
         </div>
         <div className="mb-4">
           <button
