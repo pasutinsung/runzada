@@ -28,9 +28,6 @@ export default function Layout({ children }) {
                   </span>
                 )}
               </Link>
-              <Link href="/login" className="p-2">
-                Login
-              </Link>
             </div>
           </nav>
         </header>

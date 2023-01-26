@@ -16,13 +16,6 @@ export default function ProductItem({ product }) {
         </Link>
         <p className="mb-2">{product.brand}</p>
         <p>${product.price}</p>
-        <button
-          className="rounded bg-red-300  py-2 px-4 shadow outline-none hover:bg-red-200  active:bg-red-400"
-          type="button"
-          onClick={() => addToCartHandler(product)}
-        >
-          Add to cart
-        </button>
       </div>
     </div>
   );

@@ -9,13 +9,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
     <SessionProvider session={session}>
       <StoreProvider>
         <PayPalScriptProvider deferLoading={true}>
-          {Component.auth ? (
-            <Auth adminOnly={Component.auth.adminOnly}>
-              <Component {...pageProps} />
-            </Auth>
-          ) : (
-            <Component {...pageProps} />
-          )}
+          <Component {...pageProps} />
         </PayPalScriptProvider>
       </StoreProvider>
     </SessionProvider>

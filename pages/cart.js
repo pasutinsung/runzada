@@ -20,11 +20,14 @@ function CartScreen() {
   };
   return (
     <Layout title="Shopping cart">
-      <h1 className="mb-4 next-xl">Shoping cart</h1>
+      <h1 className="mb-4 text-xl">Shoping cart</h1>
       {cartItems.length === 0 ? (
         <div>
           Cart is empty
-          <Link href="/">Go shopping</Link>
+          <div></div>
+          <Link href="/" className="text-xl text-green-400">
+            Go shopping
+          </Link>
         </div>
       ) : (
         <div className="grid md:grid-cols-4 md:gap-5">
@@ -102,7 +105,7 @@ function CartScreen() {
               </li>
               <li>
                 <button
-                  onClick={() => router.push("login?redirect=/shipping")}
+                  onClick={() => router.push("/thankyou")}
                   className="rounded bg-green-300  py-2 px-4 shadow outline-none hover:bg-green-200  active:bg-green-400 w-full"
                   type="button"
                 >
