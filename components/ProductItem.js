@@ -19,6 +19,7 @@ export default function ProductItem({ product }) {
         <button
           className="rounded bg-red-300  py-2 px-4 shadow outline-none hover:bg-red-200  active:bg-red-400"
           type="button"
+          onClick={() => addToCartHandler(product)}
         >
           Add to cart
         </button>
